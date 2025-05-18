@@ -1,0 +1,27 @@
+
+
+
+----------
+
+Client 
+
+
+
+
+
+-----------
+
+Scheduler 
+
+
+    -> 
+        - Allows People To Submit Job
+        - When a Job Is Submitted, Returns them a Future, which will eventually contain the result of that job 
+        - Queues that job to a queue
+
+    ->
+        - A backgroud process that polls the queue periodically. 
+        - Once a task is present in the queue, it checks for the available thread.
+                - This can be done by maintaining a thread pool, or atomic counter. 
+
+        - If resources are not available it goes in a wait. 
